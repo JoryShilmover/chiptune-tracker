@@ -142,6 +142,11 @@ public:
     // Renders `frames` stereo frames (interleaved L, R) at kOutputSampleRate.
     void render(int16_t* interleavedStereo, size_t frames);
 
+    // Metering: the loudest output of each channel (after volume, before pan)
+    // since the last reset, on a 0-0x7FFF scale.
+    const std::array<uint16_t, kChannelCount>& channelPeaks() const { return channelPeaks_; }
+    void resetChannelPeaks() { channelPeaks_.fill(0); }
+
 private:
     struct Channel {
         // Decoded from registers.
@@ -194,6 +199,7 @@ private:
     bool masterEnable_ = false;
     uint32_t bias_ = 0;
     bool degradeTo10Bit_ = true;
+    std::array<uint16_t, kChannelCount> channelPeaks_{};
 
     std::span<const uint8_t> memory_{};
     uint32_t memoryBase_ = 0x02000000;

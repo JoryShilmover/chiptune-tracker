@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <cstdlib>
 
 namespace dsspu {
 
@@ -44,6 +45,7 @@ Spu::Spu() { reset(); }
 void Spu::reset() {
     registers_.fill(0);
     channels_.fill(Channel{});
+    channelPeaks_.fill(0);
     for (int i = 0; i < kChannelCount; ++i) decodeChannel(i);
     masterVolume_ = 0;
     masterEnable_ = false;
@@ -318,6 +320,9 @@ void Spu::render(int16_t* interleavedStereo, size_t frames) {
         for (int i = 0; i < kChannelCount; ++i) {
             Channel& ch = channels_[size_t(i)];
             const int64_t value = runChannel(ch, i);
+            // Full scale is 0x7FFF << 4 (divider) * 128 (volume) = 0x7FFF << 11.
+            const auto level = uint16_t(std::min<int64_t>(std::abs(value) >> 11, 0x7FFF));
+            channelPeaks_[size_t(i)] = std::max(channelPeaks_[size_t(i)], level);
             // Pan (N/128), then drop 10 fraction bits.
             left += (value * int64_t(128 - ch.pan)) >> 10;
             right += (value * int64_t(ch.pan)) >> 10;
