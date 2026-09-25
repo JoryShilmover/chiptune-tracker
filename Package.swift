@@ -6,17 +6,30 @@ let package = Package(
     platforms: [.iOS(.v18), .macOS(.v15)],
     products: [
         .library(name: "DSSPU", targets: ["DSSPU"]),
+        .library(name: "TrackerAudio", targets: ["TrackerAudio"]),
         .executable(name: "spu-render", targets: ["spu-render"]),
     ],
     targets: [
         // Nintendo DS sound hardware (SPU) emulator. Portable C++, no dependencies.
         .target(name: "DSSPU", path: "Core/SPU"),
 
-        // Command-line tool that renders demo songs to WAV.
-        .executableTarget(name: "spu-render", dependencies: ["DSSPU"], path: "Tools/spu-render"),
+        // Real-time engine: transport, song playback and telemetry around the SPU.
+        .target(name: "TrackerCore", dependencies: ["DSSPU"], path: "Core/Engine"),
 
-        // Unit tests. Run with `swift run spu-tests` (or scripts/test.sh).
-        .executableTarget(name: "spu-tests", dependencies: ["DSSPU"], path: "Tests/SPUTests"),
+        // C interface to TrackerCore, so Swift can use it without C++ interop.
+        .target(name: "TrackerEngineC", dependencies: ["TrackerCore"], path: "Core/EngineC"),
+
+        // AVAudioEngine playback for iOS (and macOS, for tools).
+        .target(name: "TrackerAudio", dependencies: ["TrackerEngineC"], path: "Apple/TrackerAudio"),
+
+        // Command-line tool that renders the demo song to WAV.
+        .executableTarget(name: "spu-render", dependencies: ["TrackerCore"], path: "Tools/spu-render"),
+
+        // Plays the demo in real time on a Mac and reports render timing.
+        .executableTarget(name: "realtime-check", dependencies: ["TrackerAudio"], path: "Tools/realtime-check"),
+
+        // C++ unit tests. Run with `swift run core-tests` (or scripts/test.sh).
+        .executableTarget(name: "core-tests", dependencies: ["TrackerCore"], path: "Tests/CoreTests"),
     ],
     cxxLanguageStandard: .cxx20
 )
