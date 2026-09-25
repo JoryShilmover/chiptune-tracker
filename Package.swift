@@ -21,8 +21,8 @@ let package = Package(
         // Command-line tool that renders the demo song to WAV.
         .executableTarget(name: "spu-render", dependencies: ["TrackerCore"], path: "Tools/spu-render"),
 
-        // Unit tests. Run with `swift run spu-tests` (or scripts/test.sh).
-        .executableTarget(name: "spu-tests", dependencies: ["DSSPU"], path: "Tests/SPUTests"),
+        // C++ unit tests. Run with `swift run core-tests` (or scripts/test.sh).
+        .executableTarget(name: "core-tests", dependencies: ["TrackerCore"], path: "Tests/CoreTests"),
     ],
     cxxLanguageStandard: .cxx20
 )

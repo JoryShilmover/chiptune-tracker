@@ -1,4 +1,4 @@
-// Unit tests for the DS SPU core. Run with `swift run spu-tests`.
+// Unit tests for the DS SPU core. Run with `swift run core-tests`.
 //
 // Most tests set a channel's timer to 0xFE00, which makes the channel advance
 // exactly one hardware sample per output frame, and route it hard left at full
