@@ -12,8 +12,14 @@ let package = Package(
         // Nintendo DS sound hardware (SPU) emulator. Portable C++, no dependencies.
         .target(name: "DSSPU", path: "Core/SPU"),
 
-        // Command-line tool that renders demo songs to WAV.
-        .executableTarget(name: "spu-render", dependencies: ["DSSPU"], path: "Tools/spu-render"),
+        // Real-time engine: transport, song playback and telemetry around the SPU.
+        .target(name: "TrackerCore", dependencies: ["DSSPU"], path: "Core/Engine"),
+
+        // C interface to TrackerCore, so Swift can use it without C++ interop.
+        .target(name: "TrackerEngineC", dependencies: ["TrackerCore"], path: "Core/EngineC"),
+
+        // Command-line tool that renders the demo song to WAV.
+        .executableTarget(name: "spu-render", dependencies: ["TrackerCore"], path: "Tools/spu-render"),
 
         // Unit tests. Run with `swift run spu-tests` (or scripts/test.sh).
         .executableTarget(name: "spu-tests", dependencies: ["DSSPU"], path: "Tests/SPUTests"),
