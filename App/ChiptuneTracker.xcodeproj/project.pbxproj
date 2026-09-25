@@ -1,0 +1,242 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+		00C45FD35CB0F9C5F764F070 = {
+			isa = PBXGroup;
+			children = (
+				4E783A9E10D2A8ABA38CD11C,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E8A3AD980EC179856012B7E = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D6C719966B0E46CD816464D;
+			buildPhases = (
+				1CDF2F71A52B082132B04DFF,
+				CF5BDB0BEAFE176F9629192A,
+				C02F1309AF4906C92F1EAD44,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChiptuneTracker;
+			packageProductDependencies = (
+				C78507902683C2373B28855D,
+			);
+			productName = ChiptuneTracker;
+			productReference = 4E783A9E10D2A8ABA38CD11C;
+			productType = "com.apple.product-type.application";
+		};
+		1CDF2F71A52B082132B04DFF = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE1FFEEDA7507AD57FC6A6DD,
+				DCF8A1A85F55A81BA2049365,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		247BF104A9AD002C539DA531 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73BFC4993D558C2844970A56,
+				3C5BC6FE1E438E679FB7F74F,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C5BC6FE1E438E679FB7F74F = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+		};
+		4DC7284D206AFEA448BB2700 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = EngineTestView.swift;
+			sourceTree = "<group>";
+		};
+		4E783A9E10D2A8ABA38CD11C = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			path = ChiptuneTracker.app;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		582681C2EAE02B3F3D399C0C = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+		6033A619BE22E9E61407F42E = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = ChiptuneTrackerApp.swift;
+			sourceTree = "<group>";
+		};
+		73BFC4993D558C2844970A56 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+		};
+		7A3CC3E65B4BE81911CE6871 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chiptune Tracker";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joryshilmover.ChiptuneTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+		};
+		7D6C719966B0E46CD816464D = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A45358D7F57D12409C956205,
+				7A3CC3E65B4BE81911CE6871,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9642F1047C1002A1EE72F0DB = {
+			isa = PBXGroup;
+			children = (
+				6033A619BE22E9E61407F42E,
+				4DC7284D206AFEA448BB2700,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		98F54143AB4E86B28C3AFEE0 = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2700;
+				LastUpgradeCheck = 2700;
+			};
+			buildConfigurationList = 247BF104A9AD002C539DA531;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADCF10F76EBF2A74473E9DC4;
+			packageReferences = (
+				582681C2EAE02B3F3D399C0C,
+			);
+			productRefGroup = 00C45FD35CB0F9C5F764F070;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E8A3AD980EC179856012B7E,
+			);
+		};
+		A45358D7F57D12409C956205 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Chiptune Tracker";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.joryshilmover.ChiptuneTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+		};
+		ADCF10F76EBF2A74473E9DC4 = {
+			isa = PBXGroup;
+			children = (
+				9642F1047C1002A1EE72F0DB,
+				00C45FD35CB0F9C5F764F070,
+			);
+			sourceTree = "<group>";
+		};
+		C02F1309AF4906C92F1EAD44 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C78507902683C2373B28855D = {
+			isa = XCSwiftPackageProductDependency;
+			package = 582681C2EAE02B3F3D399C0C;
+			productName = TrackerAudio;
+		};
+		CF5BDB0BEAFE176F9629192A = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DCD452A4CA0C8FF8853CC2,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCF8A1A85F55A81BA2049365 = {
+			isa = PBXBuildFile;
+			fileRef = 4DC7284D206AFEA448BB2700;
+		};
+		EE1FFEEDA7507AD57FC6A6DD = {
+			isa = PBXBuildFile;
+			fileRef = 6033A619BE22E9E61407F42E;
+		};
+		F5DCD452A4CA0C8FF8853CC2 = {
+			isa = PBXBuildFile;
+			productRef = C78507902683C2373B28855D;
+		};
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0;
+}
