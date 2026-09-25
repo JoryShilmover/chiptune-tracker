@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Xcode / Swift
+build/
+DerivedData/
+.build/
+.swiftpm/
+*.xcuserstate
+xcuserdata/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# C/C++
+*.o
+*.a
+*.dylib
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+
+# DS homebrew builds
+*.nds
+*.elf
+
+# Rendered audio / test output
+*.wav
+!Tests/**/fixtures/**/*.wav
